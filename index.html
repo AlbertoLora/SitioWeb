@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilo/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Spartan&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./Javascript/javascript.js"></script>
+    <title>Trabajo 2ºTrimestre</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="topnav" id="myTopnav">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#Descripcion">Descripción</a>
+                <a href="#carrusel">Carrusel</a>
+                <a href="#uno-tres">Información</a>
+                <a href="#video">¿Dónde estamos?</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
+            </div>    
+        </header>
+
+        <div class="hero-image" id="inicio">
+            <div class="hero-text">
+              <h1>Página de Alberto</h1>
+              <p>Esta es mi página para el 2º Trimestre</p>
+              <a href="#uno-tres"><button>Info</button></a>
+            </div>
+        </div>
+        <div class="titulos" id="Descripcion">
+            <h1>Descripción</h1>
+        </div>
+        <section class="mitad" id="uno-dos">
+            <p>En este trimestre hemos avanzado bastante en diseño web, esta es una plantilla con varios ejemplos vistos en clase<br>
+            Cuenta con:</p>
+            <ol>
+                <li>Topnav Responsive</li>
+                <li>Hero section</li>
+                <li>Secciones por mitad y por tercios</li>
+                <li>Carrusel de imágenes</li>
+                <li>footer</li>
+                <li>Smooth Scroll</li>
+            </ol>
+        </section>
+        <section class="mitad" id="dos-dos">
+            <p>Entre mi falta de creatividad y los trabajos pendientes para este final de trimestre no me he animado a ambientar esta página en alguna temática, pero contaré con está página para posibles plantillas en el futuro, y en caso de que necesitara realizar por encargo una temática en concreto solo tendria que adaptar las imágenes y el texto a lo necesario.</p>
+        </section>
+        <div class="fin"></div>
+
+
+        <div class="titulos" id="carrusel">
+            <h1>Carrusel</h1>
+        </div>
+        <section class="carrusel">
+            <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="Imágenes/arboleda.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="Imágenes/casa-flotante.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="Imágenes/estacion-tren.jpg" style="width:100%">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="Imágenes/horizonte.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="Imágenes/land-rover.jpg" style="width:100%">
+            </div>
+                
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="Imágenes/puente.jpg" style="width:100%">
+            </div>
+                
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/arboleda.jpg" style="width:100%" onclick="currentSlide(1)" alt="Arboleda">
+                </div>
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/casa-flotante.jpg" style="width:100%" onclick="currentSlide(2)" alt="Casa flotante">
+                </div>
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/estacion-tren.jpg" style="width:100%" onclick="currentSlide(3)" alt="Estación de tren">
+                </div>
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/horizonte.jpg" style="width:100%" onclick="currentSlide(4)" alt="Horizonte">
+                </div>
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/land-rover.jpg" style="width:100%" onclick="currentSlide(5)" alt="Land Rover">
+                </div>    
+                <div class="column">
+                <img class="demo cursor" src="Imágenes/puente.jpg" style="width:100%" onclick="currentSlide(6)" alt="Puente">
+                </div>
+            </div>
+            </div>
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("demo");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active";
+                  captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+                </script>
+        </section>
+
+        <div class="titulos" id="Descripcion">
+            <h1>Información</h1>
+        </div>
+        <section class="tercio" id="uno-tres">
+            <h1>Datos personales</h1>
+            <i class="fa fa-info">  Alberto lora</i><br>
+            <i class="fa fa-info">  23 Años</i><br>
+            <i class="fa fa-info">  Málaga</i>
+        </section>
+        <section class="tercio" id="dos-tres">
+            <h1>Correo electrónico</h1>
+            <i class="fa fa-at">    alberto.lora@iescampanillas.com</i>
+        </section>
+        <section class="tercio" id="tres-tres">
+            <h1>Teléfono</h1>
+            <i class="fa fa-address-book">  666 666 666</i>
+        </section>
+        <div class="fin"></div>
+
+        <div class="titulos" id="Donde">
+            <h1>¿Dónde estamos y que hacemos?</h1>
+        </div>
+        <footer>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12789.358453171484!2d-4.560578621118099!3d36.73841852937906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f1cd54795bd7%3A0x502d7a05bf98b90!2sAndalusia%20Technology%20Park%2C%2029590%20M%C3%A1laga!5e0!3m2!1sen!2ses!4v1582982810704!5m2!1sen!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/th8Cr3WBDv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </footer>
+    </div>
+</body>
+</html>
